@@ -1,0 +1,68 @@
+﻿#page, body {
+    padding: 0px;
+    margin: 0px;
+    padding-top: 100px;
+    text-align: center;
+}
+
+header, footer {
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+    height: 60px;
+    padding: 10px;
+    margin: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+header {
+    text-align: right;
+    top: 0px;
+    position: fixed;
+}
+
+footer {
+    text-align: center;
+    bottom: 0px;
+    position:fixed;
+}
+
+
+#login {
+    width: 250px;
+    background-color: lightskyblue;
+    font-size: 1.3em;
+    padding: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+button, input {
+    display: block;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    height: 25px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+label {
+    margin-left: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+
+ol {
+    list-style: none;
+}
+
+
+h2 {
+    display: inline-block;
+}
+
+li {
+    text-align: left;
+}
