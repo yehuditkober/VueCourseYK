@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        // p1 and p2 should be functions
+        function func(p1, p2) {
+            let time=Date.now();
+            console.log(time);
+            (time %2 ==0)? p1(2):p2(2);
+        }
+
+
+        func(
+            (num) => console.log(num),
+            (num) => console.log(num ** num)
+        );
+
+
+        /*
+        OUTPUT:
+        ________________
+        1531240281647
+        4
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

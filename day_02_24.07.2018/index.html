@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script scr="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"> </script>
+    <script>
+        function getCountryDetails() {
+            fetch("https://restcountries.eu/rest/v2/all?fields=name")
+                .then(res => res.json())
+                .then(data => {
+                    /************--I TRY USE IN LODAH LIBRARI BUT ITS NOT WORK...**************---
+                    fetch(`https://restcountries.eu/rest/v2/name/${data[_.random(0, 249)].name}`)
+                    */
+                    fetch(`https://restcountries.eu/rest/v2/name/${data[Math.floor(Math.random() * 249) + 1].name}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            document.getElementsById("name").innerHTML = data[0].name;
+                            document.getElementsById("c_flag").setAttribute("src", data[0].flag); 
+                          
+                        })
+                        .catch(alert("oops error"));
+                
+                });
+
+        }
+        getCountryDetails();
+    </script>
+    <style>
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                width: 40%;
+            }
+            
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            
+            .container {
+                padding: 2px 16px;
+            }
+            </style>
+</head>
+<body>
+        <h2>The choosen country is: </h2>
+
+        <div class="card">
+            <h3 id="name"></h3>
+          <img id="c_flag" style="width:100%">
+          <div class="container">
+           
+          </div>
+</body>
+
+</html>

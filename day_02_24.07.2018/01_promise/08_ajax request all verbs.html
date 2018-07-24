@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function getReq() {
+            fetch("https://reqres.in/api/users/2")
+                .then(res => res.json())
+                .then(content => console.log(content));
+        }
+
+        function postReq() {
+            fetch("https://reqres.in/api/users",
+                {
+                    method: "POST",
+                    "Content-Type": "application/json",
+                    body: '{ "name": "morpheus", "job": "leader"}'
+                })
+                .then(res => res.json())
+                .then(content => console.log(content));
+        }
+
+        function putReq() {
+            fetch("https://reqres.in/api/users/2",
+                {
+                    method: "PUT",
+                    "Content-Type": "application/json",
+                    body: '{"name": "morpheus","job": "zion resident"}'
+                })
+                .then(res => res.json())
+                .then(content => console.log(content));
+        }
+
+        function patchReq() {
+            fetch("https://reqres.in/api/users/2",
+                {
+                    method: "PATCH",
+                    "Content-Type": "application/json",
+                    body: '{"name": "morpheus","job": "zion resident"}'
+                })
+                .then(res => res.json())
+                .then(content => console.log(content));
+        }
+
+        function deleteReq() {
+            fetch("https://reqres.in/api/users/2",
+                {
+                    method: "DELETE"
+                })
+                .then(res => console.log(res.status));
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="getReq()">getReq</button>
+    <button onclick="postReq()">postReq</button>
+    <button onclick="putReq()">putReq</button>
+    <button onclick="patchReq()">patchReq</button>
+    <button onclick="deleteReq()">deleteReq</button>
+</body>
+
+</html>

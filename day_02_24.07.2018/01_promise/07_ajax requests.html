@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function getReq() {
+            //function fetch returns Promise<Response>
+            fetch("https://reqres.in/api/users?delay=3")
+                .then(res => {return res.json();})
+                .then(content => console.log(content));
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <button onclick="getReq()">getReq</button>
+</body>
+
+</html>

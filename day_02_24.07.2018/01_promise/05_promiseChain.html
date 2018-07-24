@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        let num=4;
+        let p = new Promise(
+            (resolve, reject) => {
+                (num == 4) ? resolve() : reject();
+            }
+        );
+
+
+
+        //"then" returns Promise<void>, so we can add after every `then` another `then`
+        p
+            .then(() => console.log("OK 1"))//this function is for resolve
+            .then(() => console.log("OK 2"))//this function is for resolve
+            .catch(() => console.log("NOT OK")); //this function is for reject
+
+
+
+            /*
+            OUTPUT:
+            _________________________
+            OK 1
+            OK 2
+            */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

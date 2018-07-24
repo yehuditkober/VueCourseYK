@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        let num = 3;
+
+        //promise בשביל ליצור אובייקט חדש מסוג 
+        //יש להעביר לבנאי פרמטר שהוא פונקציה
+        //אשר מקבלת אליה שני פרמטרים שהם גם פונקציות
+        let p = new Promise(
+            (resolve, reject) => {
+                 (num == 4)? resolve() : reject();
+            }
+        );
+
+
+        p
+        .then(() => console.log("OK"))//this function is for resolve
+        .catch(() => console.log("NOT OK")); //this function is for reject
+
+        /*
+        OUTPUT:
+        ________________
+        NOT OK
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        let num = 4;
+
+        let p = new Promise(
+            (resolve, reject) => {
+                (num == 4) ? resolve("Hello ok") : reject("Hello not ok");
+            }
+        );
+
+
+        p
+            .then((msg) => {
+                console.log(msg);
+                return "Chained Msg"
+            })//this function is for resolve, and returns Promise<string>
+            .then((msg) => console.log(msg))
+            .catch((err) => console.log(err)); //this function is for reject
+
+        /*
+        OUTPUT:
+        ________________
+      Hello ok
+      Chained Msg
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
